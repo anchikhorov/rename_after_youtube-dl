@@ -65,7 +65,6 @@ const fetchData = (playlist) => {
         res.on("end", () => {
           try {
             const $ = cheerio.load(rawData);
-            var jsonObject = [];
             $("script").each(function () {
               if ($(this).html().includes("playlistVideoListRenderer")) {
                 const data = eval(
